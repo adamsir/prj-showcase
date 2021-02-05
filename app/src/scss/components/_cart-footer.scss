@@ -1,0 +1,86 @@
+.cart-footer {
+  margin: $layout-spacing-lg 0 0 0
+}
+// Step
+.cart-footer .step {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 0;
+
+  div:empty {
+    display: none;
+  }
+}
+
+// Step holder
+.cart-footer .steps {
+  margin: 0 -0.2rem
+}
+
+// Step submit
+.step-submit {    
+  &.loading {
+    color: #fff !important;
+    & > span {
+      animation: reveal 0.4s forwards;
+    }
+  }
+  &:after {
+    left: 16px;
+  }
+
+  &.has-redirect {
+    padding-left: 1.8rem;
+
+    &:after {
+      left: 7%;
+    }
+  }
+}
+.modal .step-submit {
+  width: 100%;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cart-footer .step-submit-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive
+.cart-footer {
+  @media (min-width: $size-md) {
+    .step-submit {
+      min-width: 14rem;
+    }
+  }
+  @media (max-width: $size-md) and (orientation: portrait) {
+    .step {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+    .step > div, .step-submit {
+      width: 100%;
+    }
+    .btn.btn-link.control.back {
+      width: 100%;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      order: 1;
+
+      &:before, &:after {
+        display: none;
+      }
+    }
+  }
+}

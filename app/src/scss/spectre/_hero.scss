@@ -1,0 +1,33 @@
+$hero-spacing: 3rem !default;
+
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-body {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: $hero-spacing 0.5rem;
+}
+
+.hero-image {
+  max-width: 250px;
+  
+  &.is-sticky {
+    position: absolute;
+    right: 0;
+    bottom: -$hero-spacing;
+  }
+}
+
+.hero-column {
+  position: relative;
+}
+
+.Project-guy.hero {
+  background-size: contain;
+  background-position: center
+}

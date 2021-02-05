@@ -1,0 +1,48 @@
+// Chips
+.chip {
+  align-items: center;
+  background: #fff;
+  border: $border-width solid $border-color;
+  border-radius: 5rem;
+  color: $gray-color-dark;
+  display: inline-flex;
+  height: $unit-6;
+  margin: $unit-h;
+  padding: 1rem 0.6rem;
+  max-width: 100%;
+  font-weight: 400;
+  line-height: 0.7rem;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: $font-size-sm;
+
+  &.success {
+    border-color: $success-color;
+    color: $success-color;
+  }
+  
+  &.warning {
+    border-color: $warning-color;
+    color: $warning-color;
+    /* background: $warning-color; */
+    color: #48310b;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  
+  &.error {
+    border-color: $error-color;
+    color: $error-color;
+  }
+  
+  &.active {
+    background: $primary-color;
+    color: $light-color;
+  }
+  
+  .avatar {
+    margin-left: -($unit-2 + $unit-h);
+    margin-right: $unit-1;
+  }
+
+}

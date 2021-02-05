@@ -1,0 +1,62 @@
+%flex-table {
+  & > .columns {
+    border-bottom: $border-width solid $border-color-light;
+    /* padding-top: $layout-spacing;
+    padding-bottom: $layout-spacing; */
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+
+    &:first-child {
+      border: none;
+      padding: 0;
+    }
+
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+  & > .columns .column {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & > div + div {
+      padding-top: 1rem;
+    }
+  }
+  .t-header {
+    color: $gray-color;
+    font-weight: 500;
+    font-size: $font-size-sm;
+  }
+  .t-body {
+    color: #606060;
+  }
+  .title {
+    margin: 0;
+  }
+
+  .card-icon {
+    margin: .2rem 0 0 0;
+  }
+}
+
+.flex-table { 
+  @extend %flex-table; 
+
+  @media (max-width: $size-xs) {
+    & > .columns .column {
+      padding-top: 1rem;
+    }
+
+    & > .columns {
+      padding-top: 0;
+    }
+  }
+}
+

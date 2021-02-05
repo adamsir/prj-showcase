@@ -1,0 +1,52 @@
+$color_info_background: #fcf8e3;
+$color_info_border: #faf2cc;
+$color_info: #8a6d3b;;
+
+$color_error_background: #f2dede;
+$color_error_border: #ebcccc;
+$color_error: #a94442;
+
+%notification-tray {
+  @media (min-width: $break_md) {
+    position: fixed;
+    z-index: 99;
+    width: 400px;
+    top: 80px;
+    right: 20px;
+
+    .toast + .toast {
+      margin: 5px 0 0 0;
+    }
+  }
+}
+
+.notifications {
+  @extend %notification-tray;    
+
+  .toast {
+    border-radius: 5px;
+  }
+
+  .messages {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.8rem;
+  }
+
+  .info {
+    @extend .messages;
+
+    color: $color_info;
+    background-color: $color_info_background;
+    border-color: $color_info_border;
+  }
+
+  .error {
+    @extend .messages;
+
+    color: $color_error;
+    background-color: $color_error_background;
+    border-color: $color_error_border;
+  }
+}
+

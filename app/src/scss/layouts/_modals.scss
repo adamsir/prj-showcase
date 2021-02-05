@@ -1,0 +1,31 @@
+%modal-primary {
+  .modal-container {
+    @media (min-width: $size-xs) {
+      width: 460px;
+    }
+  }
+  .btn-modal {
+    width: 100%;
+    text-transform: uppercase;
+  }
+  .modal {
+    &-header {
+      position: relative;
+      margin: 1rem 0 0;
+      padding-bottom: 0;
+
+      .btn-clear {
+        position: absolute;
+        top: 0;
+        right: 1.1rem;
+      }
+    }
+    &-title {
+      text-align: center;
+    }
+  }
+}
+
+.modal {
+  & { @extend %modal-primary; }
+}

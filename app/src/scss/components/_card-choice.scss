@@ -1,0 +1,300 @@
+.form-choice {
+  .form-choice-body {
+    padding-left: 2.6rem;
+  }
+
+  p {
+    margin: 0
+  }
+
+  .form-radio + .form-radio {
+    margin-top: 0.8rem; // @todo atomize token
+  }
+  .form-radio {
+    border: 0.05rem solid $border-color; // @todo atomize token
+    background: #fff;
+    border-color: #b8ead0;
+    display: block;
+    padding: 1.4rem; // @todo atomize token
+    position: relative;
+    border-radius: $border-radius;
+
+    &.active {
+      background: #f0fff7;
+      border-color: #b8ead0;
+    }
+
+    .form-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 100%;
+      top: 1.4rem;
+      left: 1.4rem;
+    }
+  }
+}
+
+
+
+
+.card-choice {
+  .card-header,
+  .card-body {
+    padding: 1.4rem;
+  }
+}
+
+.card.card-choice {
+  background: #f0fff7;
+  border-color: lighten(desaturate(adjust-hue($primary-color, 0.7280), 44.5161), 45.8824);
+  font-size: $font-size-lg;
+  font-weight: 500;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &.inactive {
+    background: #fff;
+    border-color: $border-color;
+  }
+
+  &:not(.disabled) {
+    & {
+      cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+      &:not(.no-focus) {
+        box-shadow: 0 0 0 0.1rem rgba(60, 200, 142, 0.2);
+  
+        .btn.radio:not(.active) {
+          box-shadow: 0 0 0 0.1rem rgba(60, 200, 142, 0.2);
+  
+          .icon {
+            color: #36bf85;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.card .card-header {
+  .card-icon + .card-title {
+    padding: 0 0 0 .5rem;
+  }
+  .card-icon {
+    height: 20px;
+  }
+  .btn + .card-icon {
+    margin: 0 0 0 1rem;
+  }
+}
+
+.card.card-choice {
+  &.disabled.inactive {
+    opacity: 0.6;
+    .card-title {
+      opacity: 0.5;
+    }
+  }
+
+  &.disabled {
+    .btn-action {
+      &, &:focus {
+        cursor: default;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+a.card.card-choice {
+  position: relative;
+
+  .card-header {
+    justify-content: center;
+  }
+  &, &.inactive {
+    text-decoration: none;
+    background: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+  }
+
+  &.selected {
+    color: #47e993 !important;
+    &:after {
+      animation: loading 500ms infinite linear;
+      border: 0.1rem solid #01B757;
+      border-radius: 50%;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      height: 0.8rem;
+      left: 21px;
+      margin-left: -0.4rem;
+      margin-top: -0.4rem;
+      position: absolute;
+      top: 50%;
+      width: 0.8rem;
+      z-index: 1;
+      border-bottom-color: #3bfc95;
+      border-left-color: white;
+    }
+  }
+}
+
+.card-icon {
+  min-width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &.dogs {
+    background-image: url('/static/img/logos/cards.svg');
+    width: 64px;
+  }
+
+  &.BitcoinPay {
+    background-image: url('/static/img/logos/btc.svg');
+  }
+
+  &.btc {
+    background-image: url('/static/img/logos/btc-full.svg');  
+  }
+
+  &.GloBee {
+    background-image: url('/static/img/logos/altitems.png');
+    width: 134px;
+  }
+}
+
+.card-layout + .form-vertical {
+  margin-top: $layout-spacing-lg;
+  margin-bottom: 0;
+}
+
+.card .card-choice-desc {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .desc {
+    font-size: $font-size;
+    font-weight: 400;
+    color: darken($gray-color, 10%);
+  }
+}
+
+.btn.radio {
+  .icon {
+    transition: color .2s ease-out;
+  }
+
+  &:not(.active) {
+    position: relative;
+    border-color: $border-color;
+    background: #fff;
+
+    .icon {
+      color: $border-color;
+    }
+  }
+
+  &.active {
+    background: $primary-color;
+    border-color: $primary-color;
+
+    .icon {
+      color: #fff;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: $size-sm) {
+  .card-choice .card-header {
+    position: relative;
+
+    .card-icon {
+      position: absolute;
+      right: 12px;
+      width: 65px;
+    }
+  }
+}
+
+// @todo refactor
+.card-layout {
+  flex-direction: column;
+
+  .card {
+    width: auto;
+    padding: 0.8rem;
+    padding-top: 0.9rem;
+  }
+
+  .card + .card {
+    margin-top: 0.6rem;
+  }
+}
+
+.card-layout .card-title {
+  position: relative;
+  width: 100%;
+  padding: 0.1rem 0 0 1.4rem;
+
+  .subtitle {
+    position: absolute;
+    width: 100%;
+    bottom: -11px;
+    display: block;
+    font-size: 11px;
+    color: #D1CECE;
+    letter-spacing: 0.2px;
+  }
+}
+
+.card-layout .card .card-header {
+  position: relative;
+  padding: 0;
+  padding-left: 0.8rem;
+
+  .btn {
+    position: absolute;
+    left: 0;
+    top: -4px;
+  }
+}
+
+@media (max-width: 840px) {
+  .card-layout .card-header {
+    .card-icon {
+      position: static;
+      height: 18px;
+
+      &.dogs {
+        position: relative;
+        right: 0;
+        top: 2px;
+      }
+
+      &.GloBee {
+        background-size: cover;
+        width: 20px;
+      }
+      &.BitcoinPay {
+        width: auto;
+      }
+    }
+  }
+}

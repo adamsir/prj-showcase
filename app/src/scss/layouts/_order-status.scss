@@ -1,0 +1,48 @@
+.order-status {
+  padding: $navbar-height 0 0;
+
+  .cart-inner {
+    /* margin: 3.35rem 0 0; */
+  }
+
+  h3.block {
+    margin-bottom: 0;
+  }
+
+  .order-summary {
+    .panel-header {
+      padding: 1rem 1.2rem 1.2rem 1.2rem;
+    }
+
+    .chip {
+      padding: 0.2rem 0.6rem;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+
+    .chip.success {
+      color: #0c8444;
+    }
+  }
+}
+
+.payment-form {
+  margin: $layout-spacing-lg 0 0 0;
+  padding: $unit-8 0 0 0;
+  border-top: $border-width solid $border-color-light;
+}
+
+.order-history {
+  .icon {
+    opacity: 0.5;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: $size-md) {
+  .order-summary-wrapper {
+    order: -1;
+  }
+}

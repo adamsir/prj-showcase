@@ -1,0 +1,17 @@
+%paragraph {
+
+  // hero paragraph
+  $paragraph-hero-spacing: 0 0 ($unit-6 + $unit-7) !default;
+  &.is-hero {
+    margin: $paragraph-hero-spacing;
+/*     font-size: $font-size-lg;
+    font-weight: 500; */
+  }
+
+  // regular paragraph
+/*   &:not(.is-hero) {
+    color: $secondary-color-dark;
+  } */
+}
+
+p, .p { @extend %paragraph; }

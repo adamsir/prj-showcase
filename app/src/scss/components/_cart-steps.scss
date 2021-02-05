@@ -1,0 +1,235 @@
+/* @todo refactor */
+@mixin activeStep() {
+  & > .avatar {
+    background: #01b757;
+    box-shadow: 0 0 0 1px #01b757;
+    color: #fff;
+  }
+}
+
+.steps-container {
+  padding: $unit-4 0;
+  background: $bg-color;
+}
+
+.steps-holder {
+  background: $bg-color;
+}
+
+.step-holder {
+  position: relative;
+  height: 1.3rem;
+}
+
+.show-basket-popup {
+  .steps-holder {
+    display: none;
+  }
+  .app-navbar {
+    display: none;
+  }
+  .teaser-wrapper {
+    display: none;
+  }
+  .toast {
+    display: none;
+  }
+  /* iOS */
+  .app {
+    padding: 0;
+  }
+}
+
+.stepper .btn.control {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.has-logo.step-holder {
+  padding-left: 6rem;
+
+  &:before {
+    content: '';
+    @extend %logo-products;
+
+    position: absolute;
+    top: -0.05rem;
+    left: 0;
+    z-index: $zindex-1;
+  }
+
+  &:after {
+    content: attr(data-initial);
+
+    position: absolute;
+    top: 0.2rem;
+    left: 1.4rem;
+    z-index: $zindex-1;
+
+    font-size: $font-size-sm;
+    color: #8D8E8F;
+  }
+
+  .stepper {
+    @extend %arrow-symbol;
+  }
+}
+
+.stepper {
+  &.in-1 .stepper-item:nth-child(-n+2) {
+    @include activeStep;
+  }
+  &.in-2 .stepper-item:nth-child(-n+3) {
+    @include activeStep;
+  }
+  &.in-3 .stepper-item:nth-child(-n+4) {
+    @include activeStep;
+  }
+  &.in-4 .stepper-item:nth-child(-n+5) {
+    @include activeStep;
+  }
+  &.in-5 .stepper-item:nth-child(-n+6) {
+    @include activeStep;
+  }
+}
+
+.step-holder.has-back {
+  .stepper-item:not(.first) {
+    display: none;
+  }
+  .stepper-item.first {
+    &:before, &:after {
+      display: none;
+    }
+  }
+}
+
+.stepper .stepper-item.first {
+
+}
+
+.stepper .stepper-item:last-child {
+  &:before, &:after {
+    display: none;
+  }
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  cursor: default;
+  user-select: none;
+  z-index: 0;
+  
+  &:not(.router-link-exact-active),
+  &:not(.router-link-active) {
+    cursor: pointer;
+  }
+
+  span {
+    position: relative;
+    top: 0.05rem;
+
+    margin: 0 0.5rem;
+    font-size: $font-size-sm;
+    color: #8D8E8F;
+  }
+
+  @extend %arrow-symbol;
+  // %arrow-symbol 
+  &:before {
+    position: absolute;
+    top: 8px;
+    right: -0.9rem;
+  }
+  &:after {
+    position: absolute;
+    top: 8px;
+    right: -1rem;
+  }
+}
+
+.stepper-item > .avatar {
+  height: 1.2rem;
+  width: 1.2rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  box-shadow: 0 0 0 1px #dddddd;
+  background: #f9f9f9;
+  color: #8d8e8f;
+
+  &[data-initial="1"] {
+    &:before {
+      width: 0.4rem;
+    }
+  }
+}
+
+.stepper {
+  list-style: none;
+  margin: 0 -1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  &-item {
+
+  }
+
+  &-title {
+    background: #f3f3f3;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #a9a6a6;
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: $size-xs) {
+  .stepper {
+    margin: 0;
+    justify-content: center;
+  }
+  .stepper-item {
+    margin: 0 0.2rem;
+
+    &:before, &:after {
+      display: none;
+    }
+  }
+
+  .step-holder.has-back {
+    .stepper {
+      justify-content: flex-start;
+    }
+
+    .stepper-item.first {
+      margin: 0 0 0 -0.2rem;
+    }
+  }
+
+  .step-holder:not(.has-back) {
+
+    .stepper-item.first {
+      display: none;
+    }
+  }
+
+  .steps-container {
+    /* position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(141, 142, 143, 0.1); */
+
+    width: 100%;
+    top: 60px;
+    left: 0;
+    z-index: $zindex-1;
+  }
+
+}

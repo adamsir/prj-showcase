@@ -1,0 +1,236 @@
+// spacing
+ul.color-picker {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+
+  li {
+    margin: 0;
+  }
+
+  li + li {
+    margin: 0 0 0 $layout-spacing-sm;
+  }
+}
+
+.btn-color + .btn-color {
+  margin: 0 0 0 $layout-spacing-sm;
+}
+
+.btn-action + .btn-action {
+  margin: $layout-spacing 0 0 0;
+}
+  
+// button variants
+.btn.btn-color {
+  & {
+    @include action-shadow($active: false);
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  &.active {
+    @include action-shadow($active: true)
+  }
+  &:not(.active):not(.as-checkbox) {
+    .icon { color: transparent; }
+  }
+  &:not(.active):hover {
+    @include control-shadow(#fafafa, 1);
+  }
+  &.white {
+    background: #fff;
+    border-color: $border-color;
+
+    &.active .icon {
+      color: #000;
+    }
+
+    .attr-name {
+      color: #000;
+    }
+  }
+  &.black {
+    background: #000;
+    border-color: #000;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.red {
+    background: #db414d;
+    border-color: #db414d;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.blue {
+    background: #005db2;
+    border-color: #005db2;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.green {
+    background: #289d55;
+    border-color: #289d55;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.yellow {
+    background: #d5bb50;
+    border-color: #d5bb50;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.leather-black {
+    background: url('/static/img/product/accessories/leather_textures.jpg');
+    background-position-x: 0;
+    border-color: #000;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.leather-brown {
+    background: url('/static/img/product/accessories/leather_textures.jpg');
+    background-position-x: 100px;
+    border-color: #000;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+  &.leather-blue {
+    background: url('/static/img/product/accessories/leather_textures.jpg');
+    background-position-x: 60px;
+    border-color: #000;
+
+    &.active .icon {
+      color: #fff;
+    }
+  }
+}
+
+// button color as checkbox
+.btn.as-checkbox {
+  border-radius: $border-radius;
+  min-width: 1.5rem;
+  width: auto;
+  padding: 0.15rem 0.4rem 0.15rem 0.4rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-color: $border-color;
+  box-shadow: none;
+  transition: all 0.1s ease-in;
+  background: #fff;
+  color: $secondary-color;
+
+  .item-span {
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .icon {
+    position: absolute;
+    z-index: 2;
+    left: 8px;
+    top: 9px;
+    opacity: 1;
+  }
+
+  &.active, &:hover, &:active {
+    background: #fff;
+    border-color: darken($border-color, 50%);
+    color: $secondary-color-dark;
+  }
+
+  &.active {
+    box-shadow: none;
+
+    .icon {
+      color: $primary-color;
+    }
+  /* 
+    .item-span {
+      opacity: 0;
+      transform: translateX(200%);
+    } */
+  }
+  
+  .icon-holder {
+    position: absolute;
+    top: 2px;
+    right: 12px;
+    left: auto;
+
+    &:after {
+      content: '';
+      width: 13px;
+      height: 17px;
+      background: white;
+      z-index: 9;
+      position: absolute;
+      left: 4px;
+      top: 12px;
+    }
+  
+    .icon-product {
+      @extend %logo-products;
+      width: 9px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .icon-amazon {
+      @extend %logo-amazon;
+      width: 40px;
+      left: auto;
+      right: -6px;
+      top: 0;
+      z-index: 20;
+    }
+  
+    .icon-product {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .icon-product.is-main {
+      width: 12px;
+      left: -2px;
+      box-shadow: 0px 5px 5px 2px #fff;
+      z-index: 10;
+    }
+    .icon-product:first-child {
+      left: -8px
+    }
+    .icon-product:last-child {
+      left: 8px
+    }
+
+    &:not(.is-multipack) {
+      .icon-product {
+        opacity: 1;
+      }
+      .icon-product:first-child,
+      .icon-product:last-child {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+
+
+

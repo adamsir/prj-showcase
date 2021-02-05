@@ -1,0 +1,62 @@
+venv
+data
+db
+
+# Dev DB dumps
+*.sql
+*.dump
+
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+var
+sdist
+develop-eggs
+.installed.cfg
+__pycache__
+src/dogs-python-api
+package-lock.json
+
+# Installer logs
+pip-log.txt
+yarn-error.log
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Geckodriver logs
+tests/*.log
+
+# frontend
+virtualenv/
+node_modules/
+static/admin/
+static/fonts/
+static/img/
+project_eshop/static/css/
+project_eshop/static/js/
+
+project_eshop/templates/base.html
+templates/base.html
+
+# ignore proof-of-concept experiments
+__experiments/
+
+# IDEs
+.vscode
+.idea
+.*.swp  # vim swap files

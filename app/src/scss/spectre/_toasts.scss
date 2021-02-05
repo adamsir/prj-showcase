@@ -1,0 +1,56 @@
+// Toasts
+.toast {
+  @include toast-variant(#262626);
+  border: $border-width solid transparent;
+  font-size: $font-size-sm;
+  color: #bab8b8;
+  display: block;
+  padding: $layout-spacing-lg;
+  width: 100%;
+
+  &.toast-primary {
+    @include toast-variant($primary-color);
+  }
+
+  &.toast-success {
+    @include toast-variant($success-color);
+  }
+
+  &.toast-warning {
+    @include toast-variant($warning-color);
+  }
+
+  &.toast-error {
+    background: lighten($error-color, 90%);
+    border-color: $error-color;
+    color: #000;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .messages & {
+    border-radius: 5px;
+  }
+
+  .toast-title {
+    font-size: $font-size;
+  }
+
+  a {
+    //color: $light-color;
+    color: #8a6d3b;
+    text-decoration: underline;
+    
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      opacity: .75;
+    }
+  }
+
+  .btn-clear {
+    margin: 2px -2px 2px 4px;
+  }
+}

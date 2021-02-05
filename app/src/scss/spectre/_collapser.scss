@@ -1,0 +1,52 @@
+.collapser {
+  border-top: $border-width solid $border-color;
+  border-bottom: $border-width solid $border-color;
+}
+
+.collapser:not(.active) {
+  .collapser-body { display: none; }
+  .icon-collapser { transform: rotate(180deg); }
+}
+
+.collapser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: $secondary-color;
+
+  .form-checkbox {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+
+.collapser-body {
+  margin: 0 0 $layout-spacing 0;
+  padding: 0 0 $layout-spacing-sm 0;
+}
+
+.collapser .group {
+  display: flex;
+  justify-content: space-between;
+
+  .form-input {
+    margin-right: 0.5rem;
+  }
+}
+
+.collapser .flex.form-vertical {
+  margin-bottom: 0;
+}
+
+.collapser.collapser-lg {
+  .collapser-header {
+    padding: $layout-spacing 0;
+
+    &.has-form {
+      padding: 0.775rem 0;
+    }    
+  }
+}

@@ -1,0 +1,97 @@
+// Display
+.d-block {
+  display: block;
+  width: 100%;
+}
+.d-inline {
+  display: inline;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.d-space-between {
+  justify-content: space-between;
+}
+.d-flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.d-none,
+.d-hide {
+  display: none !important;
+}
+.d-visible {
+  visibility: visible;
+}
+.d-invisible {
+  visibility: hidden;
+}
+.text-hide {
+  background: transparent;
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+.text-assistive {
+  border: 0;
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.d-inline-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-no-op {
+  opacity: 0;
+  visibility: hidden;
+}
+.d-f-center {
+  align-items: center;
+}
+.d-f-asc {
+  align-self: center;
+}
+
+// borders helpers
+.d-no-bb {
+  border-bottom: none !important;
+}
+
+// spacing helpers
+.d-no-pt {
+  padding-top: 0 !important;
+}
+.d-no-pb {
+  padding-bottom: 0 !important;
+}
+/* bottom spacings */
+.d-p-b {
+  padding-bottom: $layout-spacing-lg !important;
+}
+.d-m-t {
+  margin-top: $layout-spacing-lg !important;
+}
+.d-m-b {
+  margin-bottom: $layout-spacing-lg !important;
+}
+.d-m-b-small {
+  margin-bottom: $layout-spacing !important;
+}
+.d-no-pl {
+  padding-left: 0;
+}

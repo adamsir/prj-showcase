@@ -1,0 +1,121 @@
+// control animation
+%cookie-reveal-animation {
+  transition: all 0.4s ease-in-out;
+}
+
+// control states
+body.offset-control.offset-control-active {
+  .app {
+    padding-top: 5.5rem
+  }
+  .app-navbar .navbar-wrapper {
+    top: 2.5rem;
+  }
+
+  .cookie-bar {
+    top: 0;
+  }
+
+  @media (max-width: $size-md) and (orientation: portrait) {
+    .app {
+      padding-top: 8.4rem;
+    }
+    .steps-container {
+      top: 110px;
+    }
+  }
+}
+
+body.offset-control-active:not(.offset-control) {
+  .cookie-bar { top: 0;  }
+
+  @media (max-width: $size-md) {
+    
+  }
+}
+
+body:not(.offset-control-active) {
+  .cookie-bar { top: -80px; transition-duration: 0.7s; }
+}
+
+body.offset-control .app {
+  @extend %cookie-reveal-animation;
+}
+body.offset-control .app-navbar .navbar-wrapper {
+  @extend %cookie-reveal-animation;
+}
+
+.cookie-bar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background: #222;
+  padding: 10px 12px 8px 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .16), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  @extend %cookie-reveal-animation;
+  //transition-delay: 0.1s;
+
+  .cookie-bar-inner {
+    display: flex;
+    justify-content: space-around;
+
+    @media (min-width: $size-lg) {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+  }
+
+  &:not(.hidden) {
+    & ~ .app {
+      padding-top: 5.5rem
+    }
+    & ~ .app-navbar .navbar-wrapper {
+      top: 2.5rem;
+    }
+  }
+
+  @media (max-width: $size-md) {
+    align-items: center;
+
+    .close-button {
+      margin-left: 50px;
+    }
+
+    .remind-me-button {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $size-md) {
+  .steps-container {
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.note {
+  color: #767676;
+}
+
+.note .md {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.note-warning {
+  @extend .note;
+  color: #e20909;
+}
+
+.close-button {
+  font-size: 32px;
+  line-height: 25px;
+  cursor: pointer;
+  height: 32px;
+}
+
+.cookie-bar a {
+  color: #666666;
+}

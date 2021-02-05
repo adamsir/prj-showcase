@@ -1,0 +1,24 @@
+// Column grid
+.column-list > div {
+  margin: 0 0 $layout-spacing*2 0;
+}
+
+.has-offset {
+  margin-top: $layout-spacing-lg;
+}
+
+// Responsive
+@media (min-width: $size-sm) {
+  .column{
+    &-sticky {
+      position: sticky;
+      top: 0;  
+    }
+  }
+}
+
+@media (max-width: $size-sm) {
+  .column {
+    padding: 0 $layout-spacing-sm;
+  }
+}

@@ -1,0 +1,113 @@
+// Footer 
+footer {
+    width: 100%;
+    color: #fff;
+    position: relative;
+    margin-bottom: -4rem;
+    
+    & .overflow__background {
+        position: absolute;
+        top: -81px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f7f7f7;
+        z-index: -1;
+    }
+    & a {
+        text-decoration: none;
+    }
+    & a:hover {
+        text-decoration: underline;
+    }
+    & .foot {
+        /* padding-top: 30px; */
+        padding-bottom: 2rem;
+    }
+    & .space-bottom {
+        margin-bottom: 0.9rem;
+    }
+    & .bottom-part {
+        width: 100%;
+        & .clear {
+        margin-left: 0;
+        }
+        & img {
+        /* margin-left: 16px; */
+        }
+        & p {
+        padding: 10px 0;
+        color: #99979c;
+        }
+        & h5 {
+        padding: 0 0 10px 0;
+        }
+        & .SomeCompany {
+        color: #060606;
+        }
+        & ul {
+        list-style-type: none;
+        color: #060606;
+        & li + li {
+            margin-top: rem(10);
+        }
+        & a {
+            color: #99979c;
+            &:hover {
+            color: #01B757;
+            text-decoration: underline;
+            }
+        }
+        }
+        & .email-form {
+        background: #060606;
+        color: #fff;
+        padding: 8px;
+        float: left;
+        position: relative;
+        margin-right: 4px;
+        border: 2px solid #929497;
+        width: 50%;
+        &:active, &:focus {
+            outline: none;
+            border: 2px solid #99979c;
+        }
+        &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder {
+            font-style: italic;
+            color: #99979c;
+        }
+        }
+    }
+    & .footer__divider hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+}
+
+@media only screen and (max-width: $size-xs) {
+    footer {
+        & .space-bottom {
+        padding-top: 30px;
+        }
+        & .center-xs {
+            text-align: center;
+        }
+    }
+}
+@media only screen and (max-width: $size-md) {
+    footer {
+        & .bottom-part {
+            padding-top: 0;
+            padding-bottom: 50px;
+        }
+        & ul {
+            padding: 0;
+            margin: 0;
+        }
+        & .overflow__background {
+            top: 0;
+        }
+    }
+}

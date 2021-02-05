@@ -1,0 +1,93 @@
+{
+  "name": "buyProject",
+  "version": "1.49.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "build:stats": "webpack --config webpack.prod.stats.js",
+    "start-storybook": "start-storybook -p 8001 --ci",
+    "build-storybook": "build-storybook -o .storybuild",
+    "deps": "rimraf 'node_modules' '*/**/node_modules' && yarn",
+    "deps:update": "rimraf 'yarn.lock' 'node_modules' '*/**/node_modules' && yarn",
+    "test": "jest"
+  },
+  "author": "SomeCompany",
+  "license": "CDDL-1.1",
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@vue/test-utils": "^1.0.0-beta.32",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-preset-vue": "^2.0.2",
+    "bootstrap-loader": "^3.0.4",
+    "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-harddisk-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "jest": "^25.1.0",
+    "jest-serializer-vue": "^2.0.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "resolve-url-loader": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "svgo": "^1.3.2",
+    "svgo-loader": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.2.0",
+    "vue-jest": "^3.0.5",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "webpackbar": "^4.0.0",
+    "image-webpack-loader": "^6.0.0",
+    "svg-sprite-loader": "^4.1.6",
+    "val-loader": "^1.0.2",
+    "vue-style-loader": "^4.1.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "is-vue-component": "^1.0.0",
+    "js-cookie": "^2.2.1",
+    "raven-js": "^3.27.2",
+    "vue": "^2.6.10",
+    "vue-carousel": "^0.18.0",
+    "vue-notification": "^1.3.20",
+    "vue-router": "^3.1.3",
+    "vuex": "^3.1.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "heroku-run-build-script": true,
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/project_eshop/src/js/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
+  }
+}

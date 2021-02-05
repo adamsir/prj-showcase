@@ -1,0 +1,60 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.flex.form-vertical {
+  display: flex;
+  flex-direction: inherit;
+  flex-wrap: wrap;
+  margin: 0 (-$layout-spacing-lg/2) $layout-spacing-lg;
+
+  .form-group { padding: 0 $layout-spacing-lg/2; }
+}
+
+.form-group {
+  .icon-stop {
+    color: $error-color;
+  }
+  
+  .icon-check {
+    color: $success-color;
+  }
+}
+
+.form-group.required {
+  .text-label {
+    position: relative;
+
+    &:after {
+      content: '*';
+      position: absolute;
+      top: 2px;
+      left: auto;
+      right: -10px;
+      font-size: 16px;
+    }
+  }
+  .form-label, label {
+    color: $dark-color;
+  }
+
+  &.has-error {
+    label {
+      color: $error-color;
+    }
+  }
+}
+
+.form-group {
+  .form-label, label {
+    .tooltip.tooltip-help {
+      color: #1E7FF0;
+      font-size: 12px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}

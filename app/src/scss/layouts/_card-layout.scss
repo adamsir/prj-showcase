@@ -1,0 +1,28 @@
+$card-layout-spacing: .6rem;
+
+.card-layout {
+  display: flex;
+  margin: 0 ($card-layout-spacing)*-1 0;
+
+  .card {
+    /* width: 50%; */
+    margin: 0 $card-layout-spacing;
+  }
+}
+
+// Responsive
+@media (max-width: $size-md) {
+  .card-layout .card {
+    width: 100%;
+    margin-bottom: $card-layout-spacing;
+  }
+  // @todo make description expandable(reachable) via collapser or modal
+  .card .card-choice-desc .desc {
+    // display: none;
+  }
+}
+@media (max-width: $size-md) and (orientation: portrait) {
+  .card-layout {
+    flex-wrap: wrap;
+  }
+}
